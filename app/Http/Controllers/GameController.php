@@ -40,7 +40,7 @@ class GameController extends Controller
 
     Game::create($request->all());
 
-    return redirect()->route('games.index')->with('success', 'Game added successfully.');
+    return redirect()->route('admin.index')->with('success', 'Game added successfully.');
 }
     /**
      * Display the specified resource.
@@ -80,7 +80,7 @@ class GameController extends Controller
     $game->update($request->all());
 
     // Redirect con messaggio di successo
-    return redirect()->route('games.index')->with('success', 'Game updated successfully.');
+    return redirect()->route('admin.index')->with('success', 'Game updated successfully.');
 }
 
     /**
@@ -91,6 +91,6 @@ class GameController extends Controller
         $game = Game::findOrFail($id);
         $game->delete();
 
-        return redirect()->route('games.index')->with('success', 'Game deleted successfully.');
+        return redirect()->route('admin.index')->with('success', 'Game deleted successfully.');
     }
 }
