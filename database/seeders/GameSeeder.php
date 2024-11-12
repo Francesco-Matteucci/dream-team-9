@@ -59,7 +59,7 @@ class GameSeeder extends Seeder
             ],
             [
                 'title' => 'Grand Theft Auto V',
-                'short_description' => 'Gioco open world che permette al giocatore di esplorare e commettere crimini.',
+                'description' => 'Gioco open world che permette al giocatore di esplorare e commettere crimini.',
                 'price' => 29.99,
                 'release_date' => '2013-04-14',
                 'thumb' => 'gta_v.jpg'
