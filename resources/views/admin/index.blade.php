@@ -22,7 +22,7 @@
                  <a class="btn btn-secondary mb-2" href="{{route("admin.show" , $game) }} ">
                     Vai al Progetto
                 </a>
-                <a class="btn btn-secondary mb-2" href="">
+                <a class="btn btn-secondary mb-2" href="{{route("admin.edit" , $game)}}">
                                 Edita Il progetto
                 </a>
                 <form action=" {{ route("admin.destroy" , $game->id)}}"

@@ -33,14 +33,14 @@ class GameController extends Controller
     $request->validate([
         'title' => 'required|string|max:255',
         'description' => 'nullable|string',
-        'price' => 'required|decimal|min:0|max:9999.99',
+        'price' => 'required|numeric|min:0|max:9999.99',
         'release_date' => 'required|date',
         'thumb' => 'nullable|string'
     ]);
 
     Game::create($request->all());
 
-    return redirect()->route('games.index')->with('success', 'Game added successfully.');
+    return redirect()->route('admin.index')->with('success', 'Game added successfully.');
 }
     /**
      * Display the specified resource.
@@ -70,7 +70,7 @@ class GameController extends Controller
     $request->validate([
         'title' => 'required|string|max:255',
         'description' => 'nullable|string',
-        'price' => 'required|decimal|min:0|max:9999.99',
+        'price' => 'required|numeric|min:0|max:9999.99',
         'release_date' => 'required|date',
         'thumb' => 'nullable|string'
     ]);
@@ -80,7 +80,7 @@ class GameController extends Controller
     $game->update($request->all());
 
     // Redirect con messaggio di successo
-    return redirect()->route('games.index')->with('success', 'Game updated successfully.');
+    return redirect()->route('admin.index')->with('success', 'Game updated successfully.');
 }
 
     /**
@@ -91,6 +91,6 @@ class GameController extends Controller
         $game = Game::findOrFail($id);
         $game->delete();
 
-        return redirect()->route('games.index')->with('success', 'Game deleted successfully.');
+        return redirect()->route('admin.index')->with('success', 'Game deleted successfully.');
     }
 }
